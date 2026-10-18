@@ -1,18 +1,131 @@
- body {
-        background-color: #212121;
-        color: #fff;
-      }
-      .center {
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      #clock {
-        font-size: 40px;
-        background-color: orange;
-        padding: 20px 50px;
-        margin-top: 10px;
-        border-radius: 10px;
-      }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px;
+    display: grid;
+    place-items: center;
+    background: #efece7;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.clock-card {
+    width: min(100%, 490px);
+    padding: 34px 38px 30px;
+    color: #272d2c;
+    background: #fffdf9;
+    border: 1px solid #dedbd5;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(43, 39, 34, 0.08);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 36px;
+    color: #797e7a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #bc785e;
+}
+
+.time-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+#clock {
+    font-size: clamp(48px, 10vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -0.07em;
+    font-variant-numeric: tabular-nums;
+}
+
+#period {
+    color: #bc785e;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+#date {
+    margin: 16px 0 34px;
+    color: #747a75;
+    font-size: 17px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid #e7e4df;
+}
+
+.note {
+    color: #8b8f8b;
+    font-size: 13px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    min-width: 68px;
+    min-height: 36px;
+    padding: 7px 11px;
+    border: 1px solid #ddd8d1;
+    border-radius: 8px;
+    color: #5d625e;
+    background: #f6f3ef;
+    font: bold 13px "Trebuchet MS", Arial, sans-serif;
+    cursor: pointer;
+}
+
+button[aria-pressed="true"] {
+    color: #fffdf9;
+    background: #545e58;
+    border-color: #545e58;
+}
+
+@media (max-width: 480px) {
+    .clock-card {
+        padding: 25px 20px;
+    }
+
+    .label {
+        margin-bottom: 30px;
+    }
+
+    #clock {
+        font-size: clamp(38px, 9vw, 48px);
+    }
+
+    #date {
+        margin-bottom: 28px;
+    }
+
+    .note {
+        display: none;
+    }
+
+    .controls {
+        justify-content: flex-end;
+    }
+}

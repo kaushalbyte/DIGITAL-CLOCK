@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="center">
-      <div id="banner"><span>Your local time</span></div>
-      <div id="clock"></div>
-    </div>
-    
-
+    <main class="clock-card">
+        <p class="label"><span class="dot"></span>Your local time</p>
+        <div class="time-row">
+            <span id="clock"></span>
+            <span id="period"></span>
+        </div>
+        <p id="date"></p>
+        <div class="controls">
+            <span class="note">A little moment, in real time.</span>
+            <div class="buttons">
+                <button id="format-button" type="button" aria-pressed="false">24-hour</button>
+                <button id="seconds-button" type="button" aria-pressed="true">Seconds</button>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
-
 </html>
