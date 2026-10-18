@@ -18,6 +18,6 @@ A sleek and real-time Digital Clock built using HTML, CSS, and JavaScript. This 
 
 
 ## New Added 
-Added Button for 24 hours and 12 hours
-Added Seconds button 
-Added new styling 
+- Added Button for 24 hours and 12 hours
+- Added Seconds button 
+- Added new styling 
